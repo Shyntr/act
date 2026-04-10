@@ -1,4 +1,4 @@
-module github.com/nektos/act
+module github.com/shyntr/act
 
 go 1.25.0
 
@@ -42,6 +42,7 @@ require (
 	github.com/moby/go-archive v0.1.0
 	github.com/moby/moby/api v1.54.0
 	github.com/moby/moby/client v0.3.0
+	github.com/nektos/act v0.2.87
 	google.golang.org/protobuf v1.36.9
 	tags.cncf.io/container-device-interface v1.1.0
 )
@@ -102,7 +103,6 @@ require (
 	go.opentelemetry.io/otel/trace v1.43.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
 	golang.org/x/crypto v0.46.0 // indirect
-	golang.org/x/exp v0.0.0-20240909161429-701f63a606c0 // indirect
 	golang.org/x/net v0.47.0 // indirect
 	golang.org/x/sync v0.19.0 // indirect
 	golang.org/x/sys v0.42.0 // indirect
