@@ -7,8 +7,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/nektos/act/pkg/model"
 	"github.com/rhysd/actionlint"
+	"github.com/shyntr/act/pkg/model"
 )
 
 type EvaluationEnvironment struct {

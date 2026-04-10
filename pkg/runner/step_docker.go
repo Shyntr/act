@@ -6,9 +6,9 @@ import (
 	"strings"
 
 	"github.com/kballard/go-shellquote"
-	"github.com/nektos/act/pkg/common"
-	"github.com/nektos/act/pkg/container"
-	"github.com/nektos/act/pkg/model"
+	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr/act/pkg/container"
+	"github.com/shyntr/act/pkg/model"
 )
 
 type stepDocker struct {

@@ -54,7 +54,7 @@ func TestGetImagePullOptions(t *testing.T) {
 	config.SetDir("testdata/docker-pull-options")
 
 	options, err = getImagePullOptions(ctx, NewDockerPullExecutorInput{
-		Image: "nektos/act",
+		Image: "shyntr/act",
 	})
 	assert.Nil(t, err, "Failed to create ImagePullOptions")
 	assert.Equal(t, "eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwicGFzc3dvcmQiOiJwYXNzd29yZFxuIiwic2VydmVyYWRkcmVzcyI6Imh0dHBzOi8vaW5kZXguZG9ja2VyLmlvL3YxLyJ9", options.RegistryAuth, "RegistryAuth should be taken from local docker config")

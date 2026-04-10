@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/moby/moby/client"
-	"github.com/nektos/act/pkg/common"
+	"github.com/shyntr/act/pkg/common"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

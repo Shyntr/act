@@ -8,10 +8,10 @@ import (
 
 	"github.com/kballard/go-shellquote"
 
-	"github.com/nektos/act/pkg/common"
-	"github.com/nektos/act/pkg/container"
-	"github.com/nektos/act/pkg/lookpath"
-	"github.com/nektos/act/pkg/model"
+	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr/act/pkg/container"
+	"github.com/shyntr/act/pkg/lookpath"
+	"github.com/shyntr/act/pkg/model"
 )
 
 type stepRun struct {

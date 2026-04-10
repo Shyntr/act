@@ -20,8 +20,8 @@ import (
 	assert "github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v3"
 
-	"github.com/nektos/act/pkg/common"
-	"github.com/nektos/act/pkg/model"
+	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr/act/pkg/model"
 )
 
 var (

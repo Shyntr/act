@@ -6,7 +6,7 @@ import (
 	"context"
 
 	"github.com/moby/moby/client"
-	"github.com/nektos/act/pkg/common"
+	"github.com/shyntr/act/pkg/common"
 )
 
 func NewDockerVolumeRemoveExecutor(volumeName string, force bool) common.Executor {

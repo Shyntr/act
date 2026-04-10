@@ -15,8 +15,8 @@ import (
 
 	"github.com/go-git/go-git/v5/plumbing/format/gitignore"
 
-	"github.com/nektos/act/pkg/model"
 	"github.com/rhysd/actionlint"
+	"github.com/shyntr/act/pkg/model"
 )
 
 func (impl *interperterImpl) contains(search, item reflect.Value) (bool, error) {

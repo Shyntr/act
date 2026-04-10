@@ -7,7 +7,7 @@ import (
 
 	git "github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing"
-	"github.com/nektos/act/pkg/common"
+	"github.com/shyntr/act/pkg/common"
 )
 
 type GoGitActionCacheOfflineMode struct {

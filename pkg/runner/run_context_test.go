@@ -11,8 +11,8 @@ import (
 	"testing"
 
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/nektos/act/pkg/exprparser"
-	"github.com/nektos/act/pkg/model"
+	"github.com/shyntr/act/pkg/exprparser"
+	"github.com/shyntr/act/pkg/model"
 
 	log "github.com/sirupsen/logrus"
 	assert "github.com/stretchr/testify/assert"
@@ -143,7 +143,7 @@ func TestRunContext_EvalBool(t *testing.T) {
 		{in: "${{ env.SOMETHING_FALSE == 'true' }} && true", out: true},
 		{in: "true && ${{ env.SOMETHING_FALSE == 'true' }}", out: true},
 		// Check github context
-		{in: "github.actor == 'nektos/act'", out: true},
+		{in: "github.actor == 'shyntr/act'", out: true},
 		{in: "github.actor == 'unknown'", out: false},
 		{in: "github.job == 'job1'", out: true},
 		// The special ACT flag
@@ -367,17 +367,17 @@ func TestGetGitHubContext(t *testing.T) {
 
 	log.Debugf("%v", ghc)
 
-	actor := "nektos/act"
+	actor := "shyntr/act"
 	if a := os.Getenv("ACT_ACTOR"); a != "" {
 		actor = a
 	}
 
-	repo := "nektos/act"
+	repo := "shyntr/act"
 	if r := os.Getenv("ACT_REPOSITORY"); r != "" {
 		repo = r
 	}
 
-	owner := "nektos"
+	owner := "shyntr"
 	if o := os.Getenv("ACT_OWNER"); o != "" {
 		owner = o
 	}

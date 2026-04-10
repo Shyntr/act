@@ -18,8 +18,8 @@ func TestActionCache(t *testing.T) {
 		Path: os.TempDir(),
 	}
 	ctx := context.Background()
-	cacheDir := "nektos/act-test-actions"
-	repo := "https://github.com/nektos/act-test-actions"
+	cacheDir := "shyntr/act-test-actions"
+	repo := "https://github.com/shyntr/act-test-actions"
 	refs := []struct {
 		Name     string
 		CacheDir string
@@ -82,9 +82,9 @@ func TestActionCacheFailures(t *testing.T) {
 		Path: os.TempDir(),
 	}
 	ctx := context.Background()
-	cacheDir := "nektos/act-test-actions"
-	repo := "https://github.com/nektos/act-test-actions-not-exist"
-	repoExist := "https://github.com/nektos/act-test-actions"
+	cacheDir := "shyntr/act-test-actions"
+	repo := "https://github.com/shyntr/act-test-actions-not-exist"
+	repoExist := "https://github.com/shyntr/act-test-actions"
 	refs := []struct {
 		Name     string
 		CacheDir string

@@ -10,13 +10,14 @@ import (
 	"strings"
 
 	"github.com/moby/go-archive"
+	"github.com/moby/go-archive/compression"
 	"github.com/moby/moby/client"
 	specs "github.com/opencontainers/image-spec/specs-go/v1"
 
 	"github.com/moby/patternmatcher"
 	"github.com/moby/patternmatcher/ignorefile"
 
-	"github.com/nektos/act/pkg/common"
+	"github.com/shyntr/act/pkg/common"
 )
 
 // NewDockerBuildExecutor function to create a run executor for the container
@@ -109,7 +110,7 @@ func createBuildContext(ctx context.Context, contextDir string, relDockerfile st
 		includes = append(includes, ".dockerignore", relDockerfile)
 	}
 
-	compression := archive.Uncompressed
+	compression := compression.None
 	buildCtx, err := archive.TarWithOptions(contextDir, &archive.TarOptions{
 		Compression:     compression,
 		ExcludePatterns: excludes,

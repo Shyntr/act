@@ -8,8 +8,8 @@ import (
 	"runtime"
 
 	docker_container "github.com/moby/moby/api/types/container"
-	"github.com/nektos/act/pkg/common"
-	"github.com/nektos/act/pkg/model"
+	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr/act/pkg/model"
 	log "github.com/sirupsen/logrus"
 )
 

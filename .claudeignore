@@ -1,0 +1,17 @@
+# Build artifacts
+dist/
+bin/
+
+# Test fixtures
+testdata/
+
+*.patch
+
+# IDE
+.idea/
+.vscode/
+
+# Go
+vendor/
+*.out
+*.test

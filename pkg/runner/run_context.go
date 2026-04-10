@@ -21,11 +21,11 @@ import (
 	"time"
 
 	"github.com/docker/go-connections/nat"
-	"github.com/nektos/act/pkg/common"
-	"github.com/nektos/act/pkg/container"
-	"github.com/nektos/act/pkg/exprparser"
-	"github.com/nektos/act/pkg/model"
 	"github.com/opencontainers/selinux/go-selinux"
+	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr/act/pkg/container"
+	"github.com/shyntr/act/pkg/exprparser"
+	"github.com/shyntr/act/pkg/model"
 )
 
 // RunContext contains info about current job
@@ -935,7 +935,7 @@ func (rc *RunContext) getGithubContext(ctx context.Context) *model.GithubContext
 	// Backwards compatibility for configs that require
 	// a default rather than being run as a cmd
 	if ghc.Actor == "" {
-		ghc.Actor = "nektos/act"
+		ghc.Actor = "shyntr/act"
 	}
 
 	if rc.EventJSON != "" {

@@ -8,8 +8,8 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/nektos/act/pkg/exprparser"
-	"github.com/nektos/act/pkg/model"
+	"github.com/shyntr/act/pkg/exprparser"
+	"github.com/shyntr/act/pkg/model"
 	assert "github.com/stretchr/testify/assert"
 	yaml "gopkg.in/yaml.v3"
 )
@@ -116,7 +116,7 @@ func TestEvaluateRunContext(t *testing.T) {
 		{"always()", true, ""},
 		{"cancelled()", false, ""},
 		{"github.workflow", "test-workflow", ""},
-		{"github.actor", "nektos/act", ""},
+		{"github.actor", "shyntr/act", ""},
 		{"github.run_id", "1", ""},
 		{"github.run_number", "1", ""},
 		{"job.status", "success", ""},
