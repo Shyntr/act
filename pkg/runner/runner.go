@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"runtime"
+	"sync"
 
 	docker_container "github.com/moby/moby/api/types/container"
 	"github.com/shyntr/act/pkg/common"
@@ -62,6 +63,38 @@ type Config struct {
 	ContainerNetworkMode               docker_container.NetworkMode // the network mode of job containers (the value of --network)
 	ActionCache                        ActionCache                  // Use a custom ActionCache Implementation
 	ConcurrentJobs                     int                          // Number of max concurrent jobs
+
+	// ShyntrMarketplaceURL — Shyntr Marketplace base URL
+	// Empty = marketplace disabled, fall through to GitHub
+	// Example: "https://marketplace.shyntr.com"
+	ShyntrMarketplaceURL string
+
+	// ShyntrMarketplaceToken — Auth token for private marketplace
+	ShyntrMarketplaceToken string
+
+	// ShyntrMarketplaceNamespaces — which namespaces to resolve
+	// from marketplace instead of GitHub
+	// Example: []string{"marketplace", "shyntr-actions"}
+	// Empty = try marketplace for ALL namespaces before GitHub fallback
+	ShyntrMarketplaceNamespaces []string
+
+	// unexported lazy-init fields for marketplace resolver
+	marketplaceResolverOnce sync.Once
+	marketplaceResolverInst *MarketplaceResolver
+}
+
+func (c *Config) marketplaceResolver() *MarketplaceResolver {
+	if c.ShyntrMarketplaceURL == "" {
+		return nil
+	}
+	c.marketplaceResolverOnce.Do(func() {
+		c.marketplaceResolverInst = NewMarketplaceResolver(
+			c.ShyntrMarketplaceURL,
+			c.ShyntrMarketplaceToken,
+			c.ShyntrMarketplaceNamespaces,
+		)
+	})
+	return c.marketplaceResolverInst
 }
 
 func (config *Config) GetConcurrentJobs() int {
