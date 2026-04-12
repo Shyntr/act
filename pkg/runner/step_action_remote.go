@@ -52,6 +52,40 @@ func (sar *stepActionRemote) prepareActionExecutor() common.Executor {
 		github := sar.getGithubContext(ctx)
 		sar.remoteAction.URL = github.ServerURL
 
+		// ── Shyntr Marketplace Resolver ──────────────────────────────────────
+		// Try to resolve the action from Shyntr Marketplace before GitHub.
+		// Falls back to GitHub if:
+		//   - Marketplace not configured (ShyntrMarketplaceURL is empty)
+		//   - Action not found in marketplace (404) → silent fallback
+		//   - Marketplace unreachable → log warning, continue to GitHub
+		if resolver := sar.RunContext.Config.marketplaceResolver(); resolver != nil {
+			if resolver.ShouldResolve(sar.remoteAction.Org, sar.remoteAction.Repo) {
+				meta, err := resolver.Resolve(ctx,
+					sar.remoteAction.Org,
+					sar.remoteAction.Repo,
+					sar.remoteAction.Ref)
+				if err != nil {
+					common.Logger(ctx).Warnf(
+						"Shyntr Marketplace lookup failed for %s/%s@%s: %v — falling back to GitHub",
+						sar.remoteAction.Org, sar.remoteAction.Repo,
+						sar.remoteAction.Ref, err)
+				} else if meta != nil {
+					common.Logger(ctx).Infof(
+						"Resolved %s/%s@%s from Shyntr Marketplace (storage: %s)",
+						sar.remoteAction.Org, sar.remoteAction.Repo,
+						sar.remoteAction.Ref, meta.StorageType)
+					sar.remoteAction.MarketplaceMeta = meta
+					// For non-git storage the URL must point to the marketplace
+					// so that the bundle download path is constructed correctly.
+					if meta.StorageType != "git" {
+						sar.remoteAction.URL = sar.RunContext.Config.ShyntrMarketplaceURL
+					}
+				}
+				// meta == nil means 404 — fall through to GitHub silently.
+			}
+		}
+		// ─────────────────────────────────────────────────────────────────────
+
 		if sar.remoteAction.IsCheckout() && isLocalCheckout(github, sar.Step) && !sar.RunContext.Config.NoSkipCheckout {
 			common.Logger(ctx).Debugf("Skipping local actions/checkout because workdir was already copied")
 			return nil
@@ -256,9 +290,17 @@ type remoteAction struct {
 	Repo string
 	Path string
 	Ref  string
+	// MarketplaceMeta is set when the action was resolved from Shyntr Marketplace.
+	MarketplaceMeta *MarketplaceActionMeta
 }
 
 func (ra *remoteAction) CloneURL() string {
+	// Marketplace git-storage: use the URL provided by the marketplace API.
+	if ra.MarketplaceMeta != nil &&
+		ra.MarketplaceMeta.StorageType == "git" &&
+		ra.MarketplaceMeta.CloneURL != "" {
+		return ra.MarketplaceMeta.CloneURL
+	}
 	return fmt.Sprintf("%s/%s/%s", ra.URL, ra.Org, ra.Repo)
 }
 

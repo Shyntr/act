@@ -2,51 +2,36 @@ version: 2
 before:
   hooks:
     - go mod tidy
-builds:
-  - env:
-      - CGO_ENABLED=0
-    goos:
-      - darwin
-      - linux
-      - windows
-    goarch:
-      - amd64
-      - '386'
-      - arm64
-      - arm
-      - riscv64
-    goarm:
-      - '6'
-      - '7'
-    ignore:
-      - goos: windows
-        goarm: '6'
+
 checksum:
   name_template: 'checksums.txt'
-archives:
-  - name_template: >-
-      {{ .ProjectName }}_
-      {{- title .Os }}_
-      {{- if eq .Arch "amd64" }}x86_64
-      {{- else if eq .Arch "386" }}i386
-      {{- else }}{{ .Arch }}{{ end }}
-      {{- if .Arm }}v{{ .Arm }}{{ end }}
-    format_overrides:
-      - goos: windows
-        formats: [zip]
+
 changelog:
+  sort: asc
   groups:
     - title: 'New Features'
       regexp: "^.*feat[(\\w)]*:+.*$"
       order: 0
-    - title: 'Bug fixes'
+    - title: 'Bug Fixes'
       regexp: "^.*fix[(\\w)]*:+.*$"
       order: 1
-    - title: 'Documentation updates'
-      regexp: "^.*docs[(\\w)]*:+.*$"
+    - title: 'Shyntr Changes'
+      regexp: "^.*shyntr[(\\w)]*:+.*$"
       order: 2
+    - title: 'Upstream Sync'
+      regexp: "^.*upstream[(\\w)]*:+.*$"
+      order: 3
     - title: 'Other'
       order: 999
 release:
   prerelease: auto
   mode: append
+  name_template: "shyntr-ops/act {{.Tag}}"
+  header: |
+    ## shyntr-ops/act {{.Tag}}
+
+    Fork of [nektos/act](https://github.com/nektos/act) —
+    modified for use as execution engine in [Shyntr Ops](https://github.com/shyntr/shyntr-ops).
+
+    ### Upstream
+    Tracks nektos/act releases via `nektos/master` branch.
