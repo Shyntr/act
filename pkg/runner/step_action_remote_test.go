@@ -12,9 +12,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"gopkg.in/yaml.v3"
 
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/common/git"
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/common/git"
+	"github.com/shyntr-ops/act/pkg/model"
 )
 
 type stepActionRemoteMocks struct {

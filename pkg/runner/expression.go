@@ -12,10 +12,10 @@ import (
 
 	_ "embed"
 
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/container"
-	"github.com/shyntr/act/pkg/exprparser"
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/container"
+	"github.com/shyntr-ops/act/pkg/exprparser"
+	"github.com/shyntr-ops/act/pkg/model"
 	"gopkg.in/yaml.v3"
 )
 

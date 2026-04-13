@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/model"
 )
 
 func printList(plan *model.Plan) error {

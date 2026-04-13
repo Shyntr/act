@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/common/git"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/common/git"
 )
 
 type GithubContext struct {

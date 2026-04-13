@@ -11,8 +11,8 @@ import (
 	"testing"
 
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/shyntr/act/pkg/exprparser"
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/exprparser"
+	"github.com/shyntr-ops/act/pkg/model"
 
 	log "github.com/sirupsen/logrus"
 	assert "github.com/stretchr/testify/assert"

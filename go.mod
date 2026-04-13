@@ -1,4 +1,4 @@
-module github.com/shyntr/act
+module github.com/shyntr-ops/act
 
 go 1.25.7
 

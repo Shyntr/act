@@ -25,13 +25,13 @@ import (
 	"github.com/spf13/pflag"
 	"gopkg.in/yaml.v3"
 
-	"github.com/shyntr/act/pkg/artifactcache"
-	"github.com/shyntr/act/pkg/artifacts"
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/container"
-	"github.com/shyntr/act/pkg/gh"
-	"github.com/shyntr/act/pkg/model"
-	"github.com/shyntr/act/pkg/runner"
+	"github.com/shyntr-ops/act/pkg/artifactcache"
+	"github.com/shyntr-ops/act/pkg/artifacts"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/container"
+	"github.com/shyntr-ops/act/pkg/gh"
+	"github.com/shyntr-ops/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/runner"
 )
 
 type Flag struct {
@@ -717,7 +717,7 @@ func defaultImageSurvey(actrc string) error {
 	var answer string
 	confirmation := &survey.Select{
 		Message: "Please choose the default image you want to use with act:\n  - Large size image: ca. 17GB download + 53.1GB storage, you will need 75GB of free disk space, snapshots of GitHub Hosted Runners without snap and pulled docker images\n  - Medium size image: ~500MB, includes only necessary tools to bootstrap actions and aims to be compatible with most actions\n  - Micro size image: <200MB, contains only NodeJS required to bootstrap actions, doesn't work with all actions\n\nDefault image and other options can be changed manually in " + configLocations()[0] + " (please refer to https://nektosact.com/usage/index.html?highlight=configur#configuration-file for additional information about file structure)",
-		Help:    "If you want to know why act asks you that, please go to https://github.com/shyntr/act/issues/107",
+		Help:    "If you want to know why act asks you that, please go to https://github.com/shyntr-ops/act/issues/107",
 		Default: "Medium",
 		Options: []string{"Large", "Medium", "Micro"},
 	}

@@ -6,7 +6,7 @@ import (
 	"context"
 
 	"github.com/moby/moby/client"
-	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/common"
 )
 
 func NewDockerNetworkCreateExecutor(name string) common.Executor {

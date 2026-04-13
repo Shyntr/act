@@ -22,7 +22,7 @@ import (
 	"github.com/timshannon/bolthold"
 	"go.etcd.io/bbolt"
 
-	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/common"
 )
 
 const (

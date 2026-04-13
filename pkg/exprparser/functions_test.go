@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/model"
 	"github.com/stretchr/testify/assert"
 )
 

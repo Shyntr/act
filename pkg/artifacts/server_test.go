@@ -17,8 +17,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/shyntr/act/pkg/model"
-	"github.com/shyntr/act/pkg/runner"
+	"github.com/shyntr-ops/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/runner"
 )
 
 type writableMapFile struct {

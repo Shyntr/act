@@ -14,7 +14,7 @@ import (
 	"github.com/moby/moby/client"
 	specs "github.com/opencontainers/image-spec/specs-go/v1"
 
-	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/common"
 )
 
 // NewDockerPullExecutor function to create a run executor for the container

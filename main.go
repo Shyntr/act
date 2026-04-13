@@ -3,8 +3,8 @@ package main
 import (
 	_ "embed"
 
-	"github.com/shyntr/act/cmd"
-	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr-ops/act/cmd"
+	"github.com/shyntr-ops/act/pkg/common"
 )
 
 //go:embed VERSION

@@ -4,8 +4,8 @@ import (
 	"context"
 	"io"
 
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/container"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/container"
 	"github.com/stretchr/testify/mock"
 )
 

@@ -12,8 +12,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/filecollector"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/filecollector"
 )
 
 type LocalRepositoryCache struct {

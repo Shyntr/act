@@ -15,7 +15,7 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 
-	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/common"
 )
 
 type FileContainerResourceURL struct {

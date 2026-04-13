@@ -8,8 +8,8 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/shyntr/act/pkg/exprparser"
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/exprparser"
+	"github.com/shyntr-ops/act/pkg/model"
 	assert "github.com/stretchr/testify/assert"
 	yaml "gopkg.in/yaml.v3"
 )

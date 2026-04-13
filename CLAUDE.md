@@ -11,7 +11,7 @@ Key changes from upstream:
 - `pkg/container/k8s.go` — Kubernetes Pod executor (new, our code)
 - `pkg/container/factory.go` — driver selection: "docker" or "k8s" (modified)
 - `cmd/` — CLI removed, library-only use
-- `go.mod` — module renamed to `github.com/shyntr/act`
+- `go.mod` — module renamed to `github.com/shyntr-ops/act`
 
 Upstream: `nektos/master` branch mirrors nektos/act master exactly.
 Our changes live on: `shyntr/main` branch.

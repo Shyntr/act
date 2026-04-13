@@ -5,7 +5,7 @@ import (
 	"io"
 
 	"github.com/docker/go-connections/nat"
-	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/common"
 )
 
 // NewContainerInput the input for the New function

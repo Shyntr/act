@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/shyntr/act/pkg/schema"
+	"github.com/shyntr-ops/act/pkg/schema"
 	"gopkg.in/yaml.v3"
 )
 

@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/schema"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/schema"
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/yaml.v3"
 )

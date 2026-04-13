@@ -8,10 +8,10 @@ import (
 
 	"github.com/kballard/go-shellquote"
 
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/container"
-	"github.com/shyntr/act/pkg/lookpath"
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/container"
+	"github.com/shyntr-ops/act/pkg/lookpath"
+	"github.com/shyntr-ops/act/pkg/model"
 )
 
 type stepRun struct {

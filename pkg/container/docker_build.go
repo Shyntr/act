@@ -17,7 +17,7 @@ import (
 	"github.com/moby/patternmatcher"
 	"github.com/moby/patternmatcher/ignorefile"
 
-	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/common"
 )
 
 // NewDockerBuildExecutor function to create a run executor for the container

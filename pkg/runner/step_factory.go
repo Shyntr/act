@@ -3,7 +3,7 @@ package runner
 import (
 	"fmt"
 
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/model"
 )
 
 type stepFactory interface {

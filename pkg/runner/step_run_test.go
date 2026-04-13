@@ -9,8 +9,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/shyntr/act/pkg/container"
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/container"
+	"github.com/shyntr-ops/act/pkg/model"
 )
 
 func TestStepRun(t *testing.T) {

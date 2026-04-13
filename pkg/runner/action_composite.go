@@ -6,8 +6,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/model"
 )
 
 func evaluateCompositeInputAndEnv(ctx context.Context, parent *RunContext, step actionStep) map[string]string {

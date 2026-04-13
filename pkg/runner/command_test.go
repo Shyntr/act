@@ -10,8 +10,8 @@ import (
 	"github.com/sirupsen/logrus/hooks/test"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/model"
 )
 
 func TestSetEnv(t *testing.T) {

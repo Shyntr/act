@@ -20,9 +20,9 @@ import (
 	"github.com/go-git/go-git/v5/plumbing/format/gitignore"
 	"golang.org/x/term"
 
-	"github.com/shyntr/act/pkg/common"
-	"github.com/shyntr/act/pkg/filecollector"
-	"github.com/shyntr/act/pkg/lookpath"
+	"github.com/shyntr-ops/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/filecollector"
+	"github.com/shyntr-ops/act/pkg/lookpath"
 )
 
 type HostEnvironment struct {

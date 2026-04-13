@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/common"
 
 	"github.com/sirupsen/logrus"
 	"golang.org/x/term"

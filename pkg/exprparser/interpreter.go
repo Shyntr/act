@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/rhysd/actionlint"
-	"github.com/shyntr/act/pkg/model"
+	"github.com/shyntr-ops/act/pkg/model"
 )
 
 type EvaluationEnvironment struct {

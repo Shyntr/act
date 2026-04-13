@@ -8,7 +8,7 @@ import (
 
 	"github.com/moby/moby/api/types/system"
 	"github.com/pkg/errors"
-	"github.com/shyntr/act/pkg/common"
+	"github.com/shyntr-ops/act/pkg/common"
 )
 
 // ImageExistsLocally returns a boolean indicating if an image with the
